@@ -23,8 +23,8 @@ class IntroViewController: UIViewController, UICollectionViewDelegate, UICollect
     let introPageNumbers = 4
     var introPageData:[IntroPage] = [
         IntroPage(head: "Sinbi", message: "多久沒有充滿自信的笑容了？", image: "intro0"),
-        IntroPage(head: "Sinbi", message: "羨慕別人擁有白到透光的牙齒嗎？", image: "intro1"),
-        IntroPage(head: "Sinbi", message: "審美給您最專業的美齒Spa", image: "intro2"),
+        IntroPage(head: "Sinbi", message: "也想擁有白到透光的牙齒嗎？", image: "intro1"),
+        IntroPage(head: "Sinbi", message: "審美給您最專業的美齒SPA", image: "intro2"),
         IntroPage(head: "Sinbi", message: "美齒從這一刻開始！", image: "intro3")
     ]
     
@@ -34,14 +34,13 @@ class IntroViewController: UIViewController, UICollectionViewDelegate, UICollect
         introMessageLabel.text = introPageData[0].message
         //init page number
         self.introPageControl.numberOfPages = self.introPageNumbers
-    
     }
 
     
-    //status bar style(白色)
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
+    
+//    override var preferredStatusBarStyle: UIStatusBarStyle {
+//        return .lightContent
+//    }
     
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -99,14 +98,14 @@ class IntroViewController: UIViewController, UICollectionViewDelegate, UICollect
     }
     
     
-    /* 登錄頁面做出在修改
+    
     @IBAction func introStartButton(_ sender: UIButton) {
       //切換畫面
-        let storyboard = UIStoryboard.init(name: "XX", bundle: nil)
-        let dvc = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! IntroViewController
-        navigationController?.pushViewController(dvc, animated: true)
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let dvc = storyboard.instantiateViewController(withIdentifier: "LoginVC") as! LoginViewController
+        self.navigationController?.pushViewController(dvc, animated: true)
     }
-    */
+    
     
     
     @IBAction func introSkipButton(_ sender: UIButton) {

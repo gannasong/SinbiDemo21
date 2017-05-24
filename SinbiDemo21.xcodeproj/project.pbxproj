@@ -14,6 +14,7 @@
 		49B0503E1ED54EAC009EFBC9 /* IntroCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0503D1ED54EAC009EFBC9 /* IntroCollectionViewCell.swift */; };
 		49B050421ED5570E009EFBC9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B050411ED5570E009EFBC9 /* IntroViewController.swift */; };
 		49B91E561ED566690046228B /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B91E551ED566690046228B /* Model.swift */; };
+		49B91E591ED591490046228B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B91E581ED591490046228B /* LoginViewController.swift */; };
 		D8A23EBE2ADB185D05E22056 /* Pods_SinbiDemo21.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238FB0CEC5D9712572188C54 /* Pods_SinbiDemo21.framework */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 		49B0503D1ED54EAC009EFBC9 /* IntroCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCollectionViewCell.swift; sourceTree = "<group>"; };
 		49B050411ED5570E009EFBC9 /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		49B91E551ED566690046228B /* Model.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		49B91E581ED591490046228B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		DC357DE05BECAE05E94AB7EA /* Pods-SinbiDemo21.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinbiDemo21.release.xcconfig"; path = "Pods/Target Support Files/Pods-SinbiDemo21/Pods-SinbiDemo21.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -47,6 +49,7 @@
 		49B0501E1ED53A02009EFBC9 = {
 			isa = PBXGroup;
 			children = (
+				49B91E571ED5908D0046228B /* Login */,
 				49B91E541ED566400046228B /* Modle */,
 				49B0503C1ED53FAB009EFBC9 /* IntroView */,
 				49B050291ED53A02009EFBC9 /* SinbiDemo21 */,
@@ -91,6 +94,14 @@
 				49B91E551ED566690046228B /* Model.swift */,
 			);
 			name = Modle;
+			sourceTree = "<group>";
+		};
+		49B91E571ED5908D0046228B /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				49B91E581ED591490046228B /* LoginViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		6DD1966661A870467C27FBCD /* Pods */ = {
@@ -237,6 +248,7 @@
 				49B050421ED5570E009EFBC9 /* IntroViewController.swift in Sources */,
 				49B0503E1ED54EAC009EFBC9 /* IntroCollectionViewCell.swift in Sources */,
 				49B0502B1ED53A02009EFBC9 /* AppDelegate.swift in Sources */,
+				49B91E591ED591490046228B /* LoginViewController.swift in Sources */,
 				49B91E561ED566690046228B /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
