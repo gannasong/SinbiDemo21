@@ -1,0 +1,6 @@
+framework module Pods_SinbiDemo21 {
+  umbrella header "Pods-SinbiDemo21-umbrella.h"
+
+  export *
+  module * { export * }
+}

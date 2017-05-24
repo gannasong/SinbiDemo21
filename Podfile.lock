@@ -1,0 +1,28 @@
+PODS:
+  - CHIPageControl (0.1.2):
+    - CHIPageControl/Aji (= 0.1.2)
+    - CHIPageControl/Aleppo (= 0.1.2)
+    - CHIPageControl/Chimayo (= 0.1.2)
+    - CHIPageControl/Fresno (= 0.1.2)
+    - CHIPageControl/Jalapeno (= 0.1.2)
+    - CHIPageControl/Jaloro (= 0.1.2)
+    - CHIPageControl/Paprika (= 0.1.2)
+    - CHIPageControl/Puya (= 0.1.2)
+  - CHIPageControl/Aji (0.1.2)
+  - CHIPageControl/Aleppo (0.1.2)
+  - CHIPageControl/Chimayo (0.1.2)
+  - CHIPageControl/Fresno (0.1.2)
+  - CHIPageControl/Jalapeno (0.1.2)
+  - CHIPageControl/Jaloro (0.1.2)
+  - CHIPageControl/Paprika (0.1.2)
+  - CHIPageControl/Puya (0.1.2)
+
+DEPENDENCIES:
+  - CHIPageControl
+
+SPEC CHECKSUMS:
+  CHIPageControl: d0fbe54bd9f1b092f543623a15a39211dd6443ba
+
+PODFILE CHECKSUM: be36fc7f9acad600b8d79e2d5f5484042e9828e1
+
+COCOAPODS: 1.2.0
