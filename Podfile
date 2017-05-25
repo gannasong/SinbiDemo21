@@ -15,4 +15,5 @@ target 'SinbiDemo21' do
   	pod 'Bolts'
   	pod 'FBSDKCoreKit'
   	pod 'FBSDKLoginKit'
+    pod 'GoogleSignIn'
 end

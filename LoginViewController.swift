@@ -10,8 +10,10 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import FBSDKLoginKit
+import GoogleSignIn
 
-class LoginViewController: UIViewController,UITextFieldDelegate {
+
+class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate{
 
     
     @IBOutlet weak var emailTextField: UITextField!
@@ -36,6 +38,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         emailTextField.clearButtonMode = .whileEditing
         passwordTextField.clearButtonMode = .whileEditing
         
+        //Google登入要加入步驟
+        GIDSignIn.sharedInstance().clientID = "837636834311-piegf21051rhqbuohahovguhik6bpcvu.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().delegate = self
     }
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -65,7 +71,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         if emailTextField.text == "" || passwordTextField.text == "" {
             present(Library.alert(message: "請確實輸入帳號及密碼", needButton: true), animated: true, completion: nil)
         } else {
-            FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+            Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
                 if error != nil {
                     print(error?.localizedDescription)
                 } else {
@@ -110,10 +116,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                 return
             }
             
-           let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+           let credential = FacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
             
-            //login by Firebase
-            FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+            //login by Firebase-簡化
+            Auth.auth().signIn(with: credential, completion: { (user, error) in
                 if  error != nil {
                     print(error?.localizedDescription)
                     self.present(Library.alert(message: "登入錯誤", needButton: true), animated: true, completion: nil)
@@ -122,7 +128,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                     print("FB登入成功")
                 }
             })
-            //
+            //轉場
             
             
         }
@@ -131,11 +137,25 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     //Google登入
     @IBAction func GoogleLoginButton(_ sender: UIButton) {
-        
-        
+        GIDSignIn.sharedInstance().signIn()
     }
     
-    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        let credential = GoogleAuthProvider.credential(withIDToken: user.authentication.idToken, accessToken: user.authentication.accessToken)
+        
+        //
+        Auth.auth().signIn(with: credential, completion: { (user, error) in
+            if  error != nil {
+                print(error?.localizedDescription)
+                self.present(Library.alert(message: "登入錯誤", needButton: true), animated: true, completion: nil)
+                return
+            } else {
+                print("Google登入成功")
+            }
+        })
+        //轉場
+    }
+
     
 
   //
