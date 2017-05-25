@@ -1,4 +1,10 @@
 PODS:
+  - Bolts (1.8.4):
+    - Bolts/AppLinks (= 1.8.4)
+    - Bolts/Tasks (= 1.8.4)
+  - Bolts/AppLinks (1.8.4):
+    - Bolts/Tasks
+  - Bolts/Tasks (1.8.4)
   - CHIPageControl (0.1.2):
     - CHIPageControl/Aji (= 0.1.2)
     - CHIPageControl/Aleppo (= 0.1.2)
@@ -16,6 +22,10 @@ PODS:
   - CHIPageControl/Jaloro (0.1.2)
   - CHIPageControl/Paprika (0.1.2)
   - CHIPageControl/Puya (0.1.2)
+  - FBSDKCoreKit (4.22.0):
+    - Bolts (~> 1.7)
+  - FBSDKLoginKit (4.22.0):
+    - FBSDKCoreKit
   - Firebase (3.16.0):
     - Firebase/Core (= 3.16.0)
   - Firebase/Auth (3.16.0):
@@ -55,14 +65,20 @@ PODS:
   - SVProgressHUD (2.1.2)
 
 DEPENDENCIES:
+  - Bolts
   - CHIPageControl
+  - FBSDKCoreKit
+  - FBSDKLoginKit
   - Firebase
   - Firebase/Auth
   - Firebase/Database
   - SVProgressHUD
 
 SPEC CHECKSUMS:
+  Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
   CHIPageControl: d0fbe54bd9f1b092f543623a15a39211dd6443ba
+  FBSDKCoreKit: c693bad19feb225469eeff14452ba364522ee48b
+  FBSDKLoginKit: 1fa529fc622d7b32ebeaffbecd377180833c6d30
   Firebase: 21bf4a89d3f01bfbe11adc3a5d934a4a3d3a5fd6
   FirebaseAnalytics: 920e46455f27b0a52a80907a6d9b73ee4bd1c635
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
@@ -73,6 +89,6 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
 
-PODFILE CHECKSUM: ece2a4bc684dbc68a4c5ded669d6b1c859afa5ef
+PODFILE CHECKSUM: 3b0332e6e6837897361d18f0c2af9b6e08f1889d
 
 COCOAPODS: 1.2.0

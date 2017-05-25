@@ -11,4 +11,8 @@ target 'SinbiDemo21' do
   	pod 'Firebase/Database'
   	pod 'Firebase'
   	pod 'SVProgressHUD'
+  # Pods for Facebook
+  	pod 'Bolts'
+  	pod 'FBSDKCoreKit'
+  	pod 'FBSDKLoginKit'
 end

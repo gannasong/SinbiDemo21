@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import FBSDKLoginKit
 
 class LoginViewController: UIViewController,UITextFieldDelegate {
 
@@ -97,7 +98,34 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     //FB登入
     @IBAction func fbLoginButton(_ sender: UIButton) {
-        
+        let fbLoginManager = FBSDKLoginManager()
+        fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            
+            guard let accessToken = FBSDKAccessToken.current() else {
+                //沒拿到
+                print("Failed to get access token")
+                return
+            }
+            
+           let credential = FIRFacebookAuthProvider.credential(withAccessToken: accessToken.tokenString)
+            
+            //login by Firebase
+            FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
+                if  error != nil {
+                    print(error?.localizedDescription)
+                    self.present(Library.alert(message: "登入錯誤", needButton: true), animated: true, completion: nil)
+                    return
+                } else {
+                    print("FB登入成功")
+                }
+            })
+            //
+            
+            
+        }
         
     }
     
