@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import UIKit
 //導覽頁面Model
 class IntroPage {
     var head = ""
@@ -18,5 +18,16 @@ class IntroPage {
         self.head = head
         self.message = message
         self.image = image
+    }
+}
+
+
+class Library {
+    static func alert(title: String = "錯誤", message: String, needButton: Bool) -> UIAlertController {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        if needButton {
+            alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))
+        }
+        return alert
     }
 }

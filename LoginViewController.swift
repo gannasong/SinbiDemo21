@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class LoginViewController: UIViewController,UITextFieldDelegate {
 
@@ -17,9 +19,21 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //委派鍵盤縮回
         emailTextField.delegate = self
         passwordTextField.delegate = self
 
+        //userDefault取使用者資料
+        if let userEmail = UserDefaults.standard.object(forKey: "UserEmail") {
+            emailTextField.text = userEmail as? String
+        }
+        
+        if let userPass = UserDefaults.standard.object(forKey: "UserPass") {
+            passwordTextField.text = userPass as? String
+        }
+        
+        emailTextField.clearButtonMode = .whileEditing
+        passwordTextField.clearButtonMode = .whileEditing
         
     }
 
@@ -45,8 +59,30 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     }
     
     
-    //登入
+    //Firbase登入
     @IBAction func loginButton(_ sender: UIButton) {
+        if emailTextField.text == "" || passwordTextField.text == "" {
+            present(Library.alert(message: "請確實輸入帳號及密碼", needButton: true), animated: true, completion: nil)
+        } else {
+            FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+                if error != nil {
+                    print(error?.localizedDescription)
+                } else {
+                    //userDefauts-記下使用者的帳號密碼
+                    UserDefaults.standard.set(self.emailTextField.text, forKey: "UserEmail")
+                    UserDefaults.standard.set(self.passwordTextField.text, forKey: "UserPass")
+                    //同步強制存檔
+                    UserDefaults.standard.synchronize()
+                    
+                    self.present(Library.alert(title: "登入成功", message: "審美會員你好!!", needButton: true), animated: true, completion: {
+                       //寫轉場
+                        print("登入成功")
+                        self.emailTextField.text = ""
+                        self.passwordTextField.text = ""
+                    })
+                }
+            })
+        }
     }
     
     //忘記密碼
@@ -57,6 +93,20 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
     //轉場註冊頁
     @IBAction func SignUpButton(_ sender: UIButton) {
     }
+    
+    
+    //FB登入
+    @IBAction func fbLoginButton(_ sender: UIButton) {
+        
+        
+    }
+    
+    //Google登入
+    @IBAction func GoogleLoginButton(_ sender: UIButton) {
+        
+        
+    }
+    
     
     
 

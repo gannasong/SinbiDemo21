@@ -7,4 +7,8 @@ target 'SinbiDemo21' do
 
   # Pods for SinbiDemo21
   	pod 'CHIPageControl'
+  	pod 'Firebase/Auth'
+  	pod 'Firebase/Database'
+  	pod 'Firebase'
+  	pod 'SVProgressHUD'
 end
