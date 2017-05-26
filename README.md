@@ -2,7 +2,7 @@
 
 審美官網：<https://www.sinbi-tw.com/><br>
 
-![swift 3.0](https://github.com/gannasong/SinbiDemo21/blob/master/swift3.0.svg)
+![swift 3.0](https://github.com/gannasong/SinbiDemo21/blob/master/swift.svg)
 ### 專為Sinbi會員提供的線上預約服務
 ![](https://github.com/gannasong/SinbiDemo21/blob/master/SnibiGif01.gif)
 
