@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		4946C0D81ED6A7B900ACED45 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946C0D71ED6A7B900ACED45 /* Auth.swift */; };
 		4946C0DA1ED6A8AD00ACED45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4946C0D91ED6A8AD00ACED45 /* GoogleService-Info.plist */; };
+		4946C0DE1ED6D4FE00ACED45 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4946C0DD1ED6D4FE00ACED45 /* Reachability.m */; };
 		49B0502B1ED53A02009EFBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0502A1ED53A02009EFBC9 /* AppDelegate.swift */; };
 		49B050301ED53A02009EFBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B0502E1ED53A02009EFBC9 /* Main.storyboard */; };
 		49B050321ED53A02009EFBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49B050311ED53A02009EFBC9 /* Assets.xcassets */; };
@@ -25,6 +26,9 @@
 		272313F151FD11D0863F53ED /* Pods-SinbiDemo21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinbiDemo21.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinbiDemo21/Pods-SinbiDemo21.debug.xcconfig"; sourceTree = "<group>"; };
 		4946C0D71ED6A7B900ACED45 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		4946C0D91ED6A8AD00ACED45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4946C0DB1ED6D4FD00ACED45 /* SinbiDemo21-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SinbiDemo21-Bridging-Header.h"; sourceTree = "<group>"; };
+		4946C0DC1ED6D4FE00ACED45 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "../../../Xcode測試網路連線方法/Reachability.h"; sourceTree = "<group>"; };
+		4946C0DD1ED6D4FE00ACED45 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "../../../Xcode測試網路連線方法/Reachability.m"; sourceTree = "<group>"; };
 		49B050271ED53A02009EFBC9 /* SinbiDemo21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinbiDemo21.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B0502A1ED53A02009EFBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49B0502F1ED53A02009EFBC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -81,6 +85,9 @@
 				49B050331ED53A02009EFBC9 /* LaunchScreen.storyboard */,
 				49B050361ED53A02009EFBC9 /* Info.plist */,
 				4946C0D91ED6A8AD00ACED45 /* GoogleService-Info.plist */,
+				4946C0DC1ED6D4FE00ACED45 /* Reachability.h */,
+				4946C0DD1ED6D4FE00ACED45 /* Reachability.m */,
+				4946C0DB1ED6D4FD00ACED45 /* SinbiDemo21-Bridging-Header.h */,
 			);
 			path = SinbiDemo21;
 			sourceTree = "<group>";
@@ -163,6 +170,7 @@
 					49B050261ED53A02009EFBC9 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = 8H7X36TF25;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -255,6 +263,7 @@
 				49B050421ED5570E009EFBC9 /* IntroViewController.swift in Sources */,
 				49B0503E1ED54EAC009EFBC9 /* IntroCollectionViewCell.swift in Sources */,
 				49B0502B1ED53A02009EFBC9 /* AppDelegate.swift in Sources */,
+				4946C0DE1ED6D4FE00ACED45 /* Reachability.m in Sources */,
 				49B91E591ED591490046228B /* LoginViewController.swift in Sources */,
 				49B91E561ED566690046228B /* Model.swift in Sources */,
 				4946C0D81ED6A7B900ACED45 /* Auth.swift in Sources */,
@@ -381,11 +390,14 @@
 			baseConfigurationReference = 272313F151FD11D0863F53ED /* Pods-SinbiDemo21.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8H7X36TF25;
 				INFOPLIST_FILE = SinbiDemo21/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gannasong.SinbiDemo21;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SinbiDemo21/SinbiDemo21-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -395,11 +407,13 @@
 			baseConfigurationReference = DC357DE05BECAE05E94AB7EA /* Pods-SinbiDemo21.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 8H7X36TF25;
 				INFOPLIST_FILE = SinbiDemo21/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gannasong.SinbiDemo21;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SinbiDemo21/SinbiDemo21-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

@@ -68,8 +68,15 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
     
     //Firbase登入
     @IBAction func loginButton(_ sender: UIButton) {
+        //網路測試
+        if Library.checkInterNet() == false {
+            present(Library.alert(message: "網路異常"), animated: true, completion: nil)
+        }
+            
+        
+        
         if emailTextField.text == "" || passwordTextField.text == "" {
-            present(Library.alert(message: "請確實輸入帳號及密碼", needButton: true), animated: true, completion: nil)
+            present(Library.alert(message: "請確實輸入帳號及密碼"), animated: true, completion: nil)
         } else {
             Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
                 if error != nil {
@@ -81,7 +88,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
                     //同步強制存檔
                     UserDefaults.standard.synchronize()
                     
-                    self.present(Library.alert(title: "登入成功", message: "審美會員你好!!", needButton: true), animated: true, completion: {
+                    self.present(Library.alert(title: "登入成功", message: "審美會員你好!!"), animated: true, completion: {
                        //寫轉場
                         print("登入成功")
                         self.emailTextField.text = ""
@@ -104,6 +111,11 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
     
     //FB登入
     @IBAction func fbLoginButton(_ sender: UIButton) {
+        //網路測試
+        if Library.checkInterNet() == false {
+            present(Library.alert(message: "網路狀況異常"), animated: true, completion: nil)
+        }
+        
         let fbLoginManager = FBSDKLoginManager()
         fbLoginManager.logIn(withReadPermissions: ["public_profile", "email"], from: self) { (result, error) in
             if let error = error {
@@ -122,7 +134,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
             Auth.auth().signIn(with: credential, completion: { (user, error) in
                 if  error != nil {
                     print(error?.localizedDescription)
-                    self.present(Library.alert(message: "登入錯誤", needButton: true), animated: true, completion: nil)
+                    self.present(Library.alert(message: "登入錯誤"), animated: true, completion: nil)
                     return
                 } else {
                     print("FB登入成功")
@@ -137,6 +149,11 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
     
     //Google登入
     @IBAction func GoogleLoginButton(_ sender: UIButton) {
+        //網路測試
+        if Library.checkInterNet() == false {
+            present(Library.alert(message: "網路狀況異常"), animated: true, completion: nil)
+        }
+        
         GIDSignIn.sharedInstance().signIn()
     }
     
@@ -147,7 +164,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
         Auth.auth().signIn(with: credential, completion: { (user, error) in
             if  error != nil {
                 print(error?.localizedDescription)
-                self.present(Library.alert(message: "登入錯誤", needButton: true), animated: true, completion: nil)
+                self.present(Library.alert(message: "登入錯誤"), animated: true, completion: nil)
                 return
             } else {
                 print("Google登入成功")

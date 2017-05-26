@@ -23,11 +23,25 @@ class IntroPage {
 
 
 class Library {
-    static func alert(title: String = "錯誤", message: String, needButton: Bool) -> UIAlertController {
+    static func alert(title: String = "錯誤", message: String) -> UIAlertController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        if needButton {
             alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))
-        }
         return alert
     }
+    
+    //測試網路
+    //沒有網路時rawValue會是0
+    static func checkInterNet() -> Bool {
+        let rechability = Reachability(hostName: "https://www.apple.com/tw/")
+        if rechability?.currentReachabilityStatus().rawValue == 0 {
+            return false
+        } else {
+            return true
+        }
+    }
+    
+    
+        
+    
+    
 }
