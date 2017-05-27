@@ -13,6 +13,6 @@
 * 完成導覽頁設置。
 * 串接Firebase、Facebook、Google登入。
 * 完成網路連線判斷，網路異常會無法登入並出現Alert。
-* 完成Firebase會員註冊完，同時使用storage儲存照片及database儲存會員資料。
+* 完成會員註冊頁面，上傳新註冊資料同時使用storage儲存照片及database儲存會員資料。
 * 持續改版中...
 
