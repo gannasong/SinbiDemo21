@@ -10,6 +10,7 @@ target 'SinbiDemo21' do
   	pod 'Firebase/Auth'
   	pod 'Firebase/Database'
   	pod 'Firebase'
+    pod ‘Firebase/Storage’
   	pod 'SVProgressHUD'
   # Pods for Facebook
   	pod 'Bolts'
