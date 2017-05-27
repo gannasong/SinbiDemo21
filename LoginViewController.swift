@@ -22,21 +22,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //委派鍵盤縮回
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
-
-        //userDefault取使用者資料
-        if let userEmail = UserDefaults.standard.object(forKey: "UserEmail") {
-            emailTextField.text = userEmail as? String
-        }
+    
+        getUserDefaults()
+        tFDelegate()
         
-        if let userPass = UserDefaults.standard.object(forKey: "UserPass") {
-            passwordTextField.text = userPass as? String
-        }
-        
-        emailTextField.clearButtonMode = .whileEditing
-        passwordTextField.clearButtonMode = .whileEditing
         
         //Google登入要加入步驟
         GIDSignIn.sharedInstance().clientID = "837636834311-piegf21051rhqbuohahovguhik6bpcvu.apps.googleusercontent.com"
@@ -44,6 +33,28 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
         GIDSignIn.sharedInstance().delegate = self
     }
 
+    
+    
+    func tFDelegate() {
+        //委派鍵盤縮回
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
+        emailTextField.clearButtonMode = .whileEditing
+        passwordTextField.clearButtonMode = .whileEditing
+    }
+    
+    func getUserDefaults() {
+        //userDefault取使用者資料
+        if let userEmail = UserDefaults.standard.object(forKey: "UserEmail") {
+            emailTextField.text = userEmail as? String
+        }
+        if let userPass = UserDefaults.standard.object(forKey: "UserPass") {
+            passwordTextField.text = userPass as? String
+        }
+    }
+    
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
@@ -72,8 +83,6 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
         if Library.checkInterNet() == false {
             present(Library.alert(message: "網路異常"), animated: true, completion: nil)
         }
-            
-        
         
         if emailTextField.text == "" || passwordTextField.text == "" {
             present(Library.alert(message: "請確實輸入帳號及密碼"), animated: true, completion: nil)
@@ -101,6 +110,17 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
     
     //忘記密碼
     @IBAction func getPwButton(_ sender: UIButton) {
+        guard emailTextField.text != "" else {
+           present(Library.alert(message: "請輸入驗證信箱"), animated: true, completion: nil)
+            return
+        }
+        Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { (error) in
+            if error != nil {
+                print(error!.localizedDescription)
+            } else {
+                self.present(Library.alert(title: "", message: "請至指定信箱重設密碼"), animated: true, completion: nil)
+            }
+        }
     }
     
     
