@@ -9,7 +9,8 @@
 /* Begin PBXBuildFile section */
 		4946C0D81ED6A7B900ACED45 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946C0D71ED6A7B900ACED45 /* Auth.swift */; };
 		4946C0DA1ED6A8AD00ACED45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4946C0D91ED6A8AD00ACED45 /* GoogleService-Info.plist */; };
-		4946C0DE1ED6D4FE00ACED45 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4946C0DD1ED6D4FE00ACED45 /* Reachability.m */; };
+		4981053C1EDADA0E005E4677 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981053B1EDADA0E005E4677 /* MainViewController.swift */; };
+		498105401EDE5FDA005E4677 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4981053F1EDE5FDA005E4677 /* Reachability.m */; };
 		49AED0DE1ED82C67004C55BF /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AED0DD1ED82C67004C55BF /* SignUpTableViewController.swift */; };
 		49B0502B1ED53A02009EFBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0502A1ED53A02009EFBC9 /* AppDelegate.swift */; };
 		49B050301ED53A02009EFBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B0502E1ED53A02009EFBC9 /* Main.storyboard */; };
@@ -28,8 +29,9 @@
 		4946C0D71ED6A7B900ACED45 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		4946C0D91ED6A8AD00ACED45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4946C0DB1ED6D4FD00ACED45 /* SinbiDemo21-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SinbiDemo21-Bridging-Header.h"; sourceTree = "<group>"; };
-		4946C0DC1ED6D4FE00ACED45 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "../../../Xcode測試網路連線方法/Reachability.h"; sourceTree = "<group>"; };
-		4946C0DD1ED6D4FE00ACED45 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "../../../Xcode測試網路連線方法/Reachability.m"; sourceTree = "<group>"; };
+		4981053B1EDADA0E005E4677 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		4981053E1EDE5FDA005E4677 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "../../Xcode測試網路連線方法/Reachability.h"; sourceTree = "<group>"; };
+		4981053F1EDE5FDA005E4677 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "../../Xcode測試網路連線方法/Reachability.m"; sourceTree = "<group>"; };
 		49AED0DD1ED82C67004C55BF /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		49B050271ED53A02009EFBC9 /* SinbiDemo21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinbiDemo21.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B0502A1ED53A02009EFBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -56,9 +58,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4981053A1EDAD9E5005E4677 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				4981053B1EDADA0E005E4677 /* MainViewController.swift */,
+			);
+			name = MainVC;
+			sourceTree = "<group>";
+		};
 		49B0501E1ED53A02009EFBC9 = {
 			isa = PBXGroup;
 			children = (
+				4981053A1EDAD9E5005E4677 /* MainVC */,
 				49B91E571ED5908D0046228B /* Login */,
 				49B91E541ED566400046228B /* Modle */,
 				49B0503C1ED53FAB009EFBC9 /* IntroView */,
@@ -87,8 +98,8 @@
 				49B050331ED53A02009EFBC9 /* LaunchScreen.storyboard */,
 				49B050361ED53A02009EFBC9 /* Info.plist */,
 				4946C0D91ED6A8AD00ACED45 /* GoogleService-Info.plist */,
-				4946C0DC1ED6D4FE00ACED45 /* Reachability.h */,
-				4946C0DD1ED6D4FE00ACED45 /* Reachability.m */,
+				4981053E1EDE5FDA005E4677 /* Reachability.h */,
+				4981053F1EDE5FDA005E4677 /* Reachability.m */,
 				4946C0DB1ED6D4FD00ACED45 /* SinbiDemo21-Bridging-Header.h */,
 			);
 			path = SinbiDemo21;
@@ -266,10 +277,11 @@
 				49B050421ED5570E009EFBC9 /* IntroViewController.swift in Sources */,
 				49B0503E1ED54EAC009EFBC9 /* IntroCollectionViewCell.swift in Sources */,
 				49B0502B1ED53A02009EFBC9 /* AppDelegate.swift in Sources */,
-				4946C0DE1ED6D4FE00ACED45 /* Reachability.m in Sources */,
 				49B91E591ED591490046228B /* LoginViewController.swift in Sources */,
 				49B91E561ED566690046228B /* Model.swift in Sources */,
+				4981053C1EDADA0E005E4677 /* MainViewController.swift in Sources */,
 				4946C0D81ED6A7B900ACED45 /* Auth.swift in Sources */,
+				498105401EDE5FDA005E4677 /* Reachability.m in Sources */,
 				49AED0DE1ED82C67004C55BF /* SignUpTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

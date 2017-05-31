@@ -59,7 +59,9 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate, UII
     
     //選取照片庫(記得plist要增加使用權限)
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
+
+        switch indexPath.row {
+        case 0:
             if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
                 let imagePicker = UIImagePickerController()
                 imagePicker.delegate = self
@@ -67,6 +69,16 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate, UII
                 imagePicker.sourceType = .photoLibrary
                 present(imagePicker, animated: true, completion: nil)
             }
+        case 1:
+            view.endEditing(true)
+        case 2:
+            view.endEditing(true)
+        case 3:
+            view.endEditing(true)
+        case 4:
+            view.endEditing(true)
+        default:
+            break
         }
     }
     
@@ -81,7 +93,6 @@ class SignUpTableViewController: UITableViewController, UITextFieldDelegate, UII
             dismiss(animated: true, completion: nil)
         }
     }
-    
     
     
     

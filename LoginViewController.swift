@@ -11,7 +11,7 @@ import Firebase
 import FirebaseAuth
 import FBSDKLoginKit
 import GoogleSignIn
-
+import SVProgressHUD
 
 class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDelegate, GIDSignInDelegate{
 
@@ -79,6 +79,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
     
     //Firbase登入
     @IBAction func loginButton(_ sender: UIButton) {
+        SVProgressHUD.show(withStatus: "登入中")
         //網路測試
         if Library.checkInterNet() == false {
             present(Library.alert(message: "網路異常"), animated: true, completion: nil)
@@ -96,13 +97,17 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
                     UserDefaults.standard.set(self.passwordTextField.text, forKey: "UserPass")
                     //同步強制存檔
                     UserDefaults.standard.synchronize()
+//                    self.present(Library.alert(title: "登入成功", message: "審美會員你好!!"), animated: true, completion: {
+//                       //寫轉場
+//                        self.performSegue(withIdentifier: "toMainVC", sender: self)
+//                        print("登入成功")
+//                        self.emailTextField.text = ""
+//                        self.passwordTextField.text = ""
+//                    })
                     
-                    self.present(Library.alert(title: "登入成功", message: "審美會員你好!!"), animated: true, completion: {
-                       //寫轉場
-                        print("登入成功")
-                        self.emailTextField.text = ""
-                        self.passwordTextField.text = ""
-                    })
+                    self.performSegue(withIdentifier: "toMainVC", sender: self)
+                    SVProgressHUD.showSuccess(withStatus: "登入成功")
+                    SVProgressHUD.dismiss(withDelay: 1.5)
                 }
             })
         }
@@ -131,6 +136,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
     
     //FB登入
     @IBAction func fbLoginButton(_ sender: UIButton) {
+        
         //網路測試
         if Library.checkInterNet() == false {
             present(Library.alert(message: "網路狀況異常"), animated: true, completion: nil)
@@ -152,23 +158,27 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
             
             //login by Firebase-簡化
             Auth.auth().signIn(with: credential, completion: { (user, error) in
+                
                 if  error != nil {
                     print(error?.localizedDescription)
                     self.present(Library.alert(message: "登入錯誤"), animated: true, completion: nil)
                     return
                 } else {
                     print("FB登入成功")
+                    
                 }
             })
             //轉場
-            
-            
+            SVProgressHUD.showSuccess(withStatus: "登入成功")
+            SVProgressHUD.dismiss(withDelay: 1.5)
+            self.performSegue(withIdentifier: "toMainVC", sender: self)
         }
         
     }
     
     //Google登入
     @IBAction func GoogleLoginButton(_ sender: UIButton) {
+        SVProgressHUD.show(withStatus: "登入中")
         //網路測試
         if Library.checkInterNet() == false {
             present(Library.alert(message: "網路狀況異常"), animated: true, completion: nil)
@@ -191,6 +201,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
             }
         })
         //轉場
+        SVProgressHUD.showSuccess(withStatus: "登入成功")
+        SVProgressHUD.dismiss(withDelay: 1.5)
+        self.performSegue(withIdentifier: "toMainVC", sender: self)
+
     }
 
     
