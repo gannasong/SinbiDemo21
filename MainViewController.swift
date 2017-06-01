@@ -13,12 +13,22 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     @IBOutlet weak var whiteLine: UIView!
     
+    @IBOutlet weak var containerOne: UIView!
+    @IBOutlet weak var containerTwo: UIView!
+    @IBOutlet weak var containerThree: UIView!
+    
+    
     let menuIcon = ["new", "home", "message"]
     var isWhiteIcon: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         whiteLine.frame.size = CGSize(width: UIScreen.main.bounds.width/3, height: 5.0)
+        //一開始默認首頁icon
+        containerOne.isHidden = false
+        containerTwo.isHidden = true
+        containerThree.isHidden = true
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,6 +46,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MainCell", for: indexPath) as! MainCollectionViewCell
         //將icon顏色變成預設顏色
         cell.iconImage.image = UIImage(named: menuIcon[indexPath.item])?.withRenderingMode(.alwaysTemplate)
@@ -59,9 +71,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = collectionView.cellForItem(at: indexPath) as! MainCollectionViewCell
         //
-        
         let cell0 = collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as! MainCollectionViewCell
         cell0.iconImage.tintColor = UIColor.white
+        //
+        
         
         switch indexPath.item {
         case 0:
@@ -69,14 +82,17 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
             UIView.animate(withDuration: 0.3, animations: {
                 self.whiteLine.frame.origin.x = 0
-                
+                //
                 let cell1 = collectionView.cellForItem(at: IndexPath(item: 1, section: 0)) as! MainCollectionViewCell
                 cell1.iconImage.tintColor = UIColor.darkGray
                 let cell2 = collectionView.cellForItem(at: IndexPath(item: 2, section: 0)) as! MainCollectionViewCell
                 cell2.iconImage.tintColor = UIColor.darkGray
-                
+                //
                 cell.iconImage.tintColor = UIColor.white
             })
+            containerOne.isHidden = false
+            containerTwo.isHidden = true
+            containerThree.isHidden = true
         case 1:
             print(indexPath.item)
             //超笨
@@ -84,27 +100,29 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
             cell0.iconImage.tintColor = UIColor.darkGray
             let cell2 = collectionView.cellForItem(at: IndexPath(item: 2, section: 0)) as! MainCollectionViewCell
             cell2.iconImage.tintColor = UIColor.darkGray
-            
+            //
             UIView.animate(withDuration: 0.3, animations: {
                 self.whiteLine.frame.origin.x = self.whiteLine.frame.width
-                
                 cell.iconImage.tintColor = UIColor.white
-                
             })
-            
+            containerTwo.isHidden = false
+            containerOne.isHidden = true
+            containerThree.isHidden = true
         case 2:
             print(indexPath.item)
-            
+            //
             let cell0 = collectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as! MainCollectionViewCell
             cell0.iconImage.tintColor = UIColor.darkGray
             let cell1 = collectionView.cellForItem(at: IndexPath(item: 1, section: 0)) as! MainCollectionViewCell
             cell1.iconImage.tintColor = UIColor.darkGray
-            
+            //
             UIView.animate(withDuration: 0.3, animations: {
                 self.whiteLine.frame.origin.x = self.whiteLine.frame.width * 2
-                
                 cell.iconImage.tintColor = UIColor.white
             })
+            containerThree.isHidden = false
+            containerOne.isHidden = true
+            containerTwo.isHidden = true
             
         default:
             break

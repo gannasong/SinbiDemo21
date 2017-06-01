@@ -11,7 +11,6 @@
 		4946C0DA1ED6A8AD00ACED45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4946C0D91ED6A8AD00ACED45 /* GoogleService-Info.plist */; };
 		4981053C1EDADA0E005E4677 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981053B1EDADA0E005E4677 /* MainViewController.swift */; };
 		498105401EDE5FDA005E4677 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4981053F1EDE5FDA005E4677 /* Reachability.m */; };
-		498105421EDE745B005E4677 /* MainCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498105411EDE745B005E4677 /* MainCollectionViewController.swift */; };
 		498105441EDE77ED005E4677 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498105431EDE77ED005E4677 /* MainCollectionViewCell.swift */; };
 		49AED0DE1ED82C67004C55BF /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AED0DD1ED82C67004C55BF /* SignUpTableViewController.swift */; };
 		49B0502B1ED53A02009EFBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0502A1ED53A02009EFBC9 /* AppDelegate.swift */; };
@@ -34,7 +33,6 @@
 		4981053B1EDADA0E005E4677 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4981053E1EDE5FDA005E4677 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "../../Xcode測試網路連線方法/Reachability.h"; sourceTree = "<group>"; };
 		4981053F1EDE5FDA005E4677 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "../../Xcode測試網路連線方法/Reachability.m"; sourceTree = "<group>"; };
-		498105411EDE745B005E4677 /* MainCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewController.swift; sourceTree = "<group>"; };
 		498105431EDE77ED005E4677 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
 		49AED0DD1ED82C67004C55BF /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		49B050271ED53A02009EFBC9 /* SinbiDemo21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinbiDemo21.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -66,7 +64,6 @@
 			isa = PBXGroup;
 			children = (
 				4981053B1EDADA0E005E4677 /* MainViewController.swift */,
-				498105411EDE745B005E4677 /* MainCollectionViewController.swift */,
 				498105431EDE77ED005E4677 /* MainCollectionViewCell.swift */,
 			);
 			name = MainVC;
@@ -281,7 +278,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B050421ED5570E009EFBC9 /* IntroViewController.swift in Sources */,
-				498105421EDE745B005E4677 /* MainCollectionViewController.swift in Sources */,
 				49B0503E1ED54EAC009EFBC9 /* IntroCollectionViewCell.swift in Sources */,
 				49B0502B1ED53A02009EFBC9 /* AppDelegate.swift in Sources */,
 				49B91E591ED591490046228B /* LoginViewController.swift in Sources */,
