@@ -83,6 +83,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
         //網路測試
         if Library.checkInterNet() == false {
             present(Library.alert(message: "網路異常"), animated: true, completion: nil)
+            SVProgressHUD.dismiss()
         }
         
         if emailTextField.text == "" || passwordTextField.text == "" {
@@ -140,6 +141,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
         //網路測試
         if Library.checkInterNet() == false {
             present(Library.alert(message: "網路狀況異常"), animated: true, completion: nil)
+            SVProgressHUD.dismiss()
         }
         
         let fbLoginManager = FBSDKLoginManager()
@@ -160,7 +162,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
             Auth.auth().signIn(with: credential, completion: { (user, error) in
                 
                 if  error != nil {
-                    print(error?.localizedDescription)
+                    print(error!.localizedDescription)
                     self.present(Library.alert(message: "登入錯誤"), animated: true, completion: nil)
                     return
                 } else {
@@ -182,6 +184,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
         //網路測試
         if Library.checkInterNet() == false {
             present(Library.alert(message: "網路狀況異常"), animated: true, completion: nil)
+            SVProgressHUD.dismiss()
         }
         
         GIDSignIn.sharedInstance().signIn()
@@ -193,7 +196,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
         //
         Auth.auth().signIn(with: credential, completion: { (user, error) in
             if  error != nil {
-                print(error?.localizedDescription)
+                print(error!.localizedDescription)
                 self.present(Library.alert(message: "登入錯誤"), animated: true, completion: nil)
                 return
             } else {
