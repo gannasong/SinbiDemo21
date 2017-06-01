@@ -69,6 +69,17 @@
 			name = MainVC;
 			sourceTree = "<group>";
 		};
+		498716571EE074C800E78C27 /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				4981053E1EDE5FDA005E4677 /* Reachability.h */,
+				4981053F1EDE5FDA005E4677 /* Reachability.m */,
+				4946C0DB1ED6D4FD00ACED45 /* SinbiDemo21-Bridging-Header.h */,
+			);
+			name = Reachability;
+			path = SinbiDemo21;
+			sourceTree = "<group>";
+		};
 		49B0501E1ED53A02009EFBC9 = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +87,7 @@
 				49B91E571ED5908D0046228B /* Login */,
 				49B91E541ED566400046228B /* Modle */,
 				49B0503C1ED53FAB009EFBC9 /* IntroView */,
+				498716571EE074C800E78C27 /* Reachability */,
 				49B050291ED53A02009EFBC9 /* SinbiDemo21 */,
 				49B050281ED53A02009EFBC9 /* Products */,
 				6DD1966661A870467C27FBCD /* Pods */,
@@ -101,9 +113,6 @@
 				49B050331ED53A02009EFBC9 /* LaunchScreen.storyboard */,
 				49B050361ED53A02009EFBC9 /* Info.plist */,
 				4946C0D91ED6A8AD00ACED45 /* GoogleService-Info.plist */,
-				4981053E1EDE5FDA005E4677 /* Reachability.h */,
-				4981053F1EDE5FDA005E4677 /* Reachability.m */,
-				4946C0DB1ED6D4FD00ACED45 /* SinbiDemo21-Bridging-Header.h */,
 			);
 			path = SinbiDemo21;
 			sourceTree = "<group>";
