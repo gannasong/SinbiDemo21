@@ -16,10 +16,6 @@ class MainCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var iconImage: UIImageView!
     
-//    override var isHighlighted: Bool {
-//        didSet {
-//            iconImage.tintColor = UIColor.black
-//        }
-//    }
+
     
 }

@@ -6,7 +6,6 @@
 //  Copyright © 2017年 GanNaSong. All rights reserved.
 //
 
-import Foundation
 import UIKit
 //導覽頁面Model
 class IntroPage {

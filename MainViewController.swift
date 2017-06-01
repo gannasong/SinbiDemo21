@@ -12,10 +12,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     
     @IBOutlet weak var whiteLine: UIView!
-    
     @IBOutlet weak var containerOne: UIView!
     @IBOutlet weak var containerTwo: UIView!
     @IBOutlet weak var containerThree: UIView!
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     
     let menuIcon = ["new", "home", "message"]
@@ -29,6 +29,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         containerTwo.isHidden = true
         containerThree.isHidden = true
         
+        //sideMenu
+        
+        addSideBarMenu(leftMenuButton: menuButton)
     }
     
     override func viewDidAppear(_ animated: Bool) {

@@ -12,6 +12,9 @@
 		4981053C1EDADA0E005E4677 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981053B1EDADA0E005E4677 /* MainViewController.swift */; };
 		498105401EDE5FDA005E4677 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4981053F1EDE5FDA005E4677 /* Reachability.m */; };
 		498105441EDE77ED005E4677 /* MainCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498105431EDE77ED005E4677 /* MainCollectionViewCell.swift */; };
+		4987165E1EE07C1800E78C27 /* SidebarMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987165D1EE07C1800E78C27 /* SidebarMenu.swift */; };
+		498716651EE07F7600E78C27 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 498716641EE07F7600E78C27 /* SWRevealViewController.m */; };
+		4987166B1EE0868F00E78C27 /* SideMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4987166A1EE0868F00E78C27 /* SideMenuTableViewController.swift */; };
 		49AED0DE1ED82C67004C55BF /* SignUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AED0DD1ED82C67004C55BF /* SignUpTableViewController.swift */; };
 		49B0502B1ED53A02009EFBC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B0502A1ED53A02009EFBC9 /* AppDelegate.swift */; };
 		49B050301ED53A02009EFBC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49B0502E1ED53A02009EFBC9 /* Main.storyboard */; };
@@ -34,6 +37,10 @@
 		4981053E1EDE5FDA005E4677 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = "../../Xcode測試網路連線方法/Reachability.h"; sourceTree = "<group>"; };
 		4981053F1EDE5FDA005E4677 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = "../../Xcode測試網路連線方法/Reachability.m"; sourceTree = "<group>"; };
 		498105431EDE77ED005E4677 /* MainCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCollectionViewCell.swift; sourceTree = "<group>"; };
+		4987165D1EE07C1800E78C27 /* SidebarMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SidebarMenu.swift; sourceTree = "<group>"; };
+		498716631EE07F7600E78C27 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		498716641EE07F7600E78C27 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		4987166A1EE0868F00E78C27 /* SideMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewController.swift; sourceTree = "<group>"; };
 		49AED0DD1ED82C67004C55BF /* SignUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpTableViewController.swift; sourceTree = "<group>"; };
 		49B050271ED53A02009EFBC9 /* SinbiDemo21.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SinbiDemo21.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49B0502A1ED53A02009EFBC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,14 +87,34 @@
 			path = SinbiDemo21;
 			sourceTree = "<group>";
 		};
+		498716581EE07B4600E78C27 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				498716631EE07F7600E78C27 /* SWRevealViewController.h */,
+				498716641EE07F7600E78C27 /* SWRevealViewController.m */,
+			);
+			name = SWRevealViewController;
+			path = SinbiDemo21;
+			sourceTree = "<group>";
+		};
+		498716671EE0864000E78C27 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				4987166A1EE0868F00E78C27 /* SideMenuTableViewController.swift */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
 		49B0501E1ED53A02009EFBC9 = {
 			isa = PBXGroup;
 			children = (
+				498716671EE0864000E78C27 /* SideMenu */,
 				4981053A1EDAD9E5005E4677 /* MainVC */,
 				49B91E571ED5908D0046228B /* Login */,
 				49B91E541ED566400046228B /* Modle */,
 				49B0503C1ED53FAB009EFBC9 /* IntroView */,
 				498716571EE074C800E78C27 /* Reachability */,
+				498716581EE07B4600E78C27 /* SWRevealViewController */,
 				49B050291ED53A02009EFBC9 /* SinbiDemo21 */,
 				49B050281ED53A02009EFBC9 /* Products */,
 				6DD1966661A870467C27FBCD /* Pods */,
@@ -130,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				49B91E551ED566690046228B /* Model.swift */,
+				4987165D1EE07C1800E78C27 /* SidebarMenu.swift */,
 			);
 			name = Modle;
 			sourceTree = "<group>";
@@ -287,8 +315,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				49B050421ED5570E009EFBC9 /* IntroViewController.swift in Sources */,
+				4987166B1EE0868F00E78C27 /* SideMenuTableViewController.swift in Sources */,
 				49B0503E1ED54EAC009EFBC9 /* IntroCollectionViewCell.swift in Sources */,
 				49B0502B1ED53A02009EFBC9 /* AppDelegate.swift in Sources */,
+				4987165E1EE07C1800E78C27 /* SidebarMenu.swift in Sources */,
 				49B91E591ED591490046228B /* LoginViewController.swift in Sources */,
 				49B91E561ED566690046228B /* Model.swift in Sources */,
 				4981053C1EDADA0E005E4677 /* MainViewController.swift in Sources */,
@@ -296,6 +326,7 @@
 				4946C0D81ED6A7B900ACED45 /* Auth.swift in Sources */,
 				498105401EDE5FDA005E4677 /* Reachability.m in Sources */,
 				49AED0DE1ED82C67004C55BF /* SignUpTableViewController.swift in Sources */,
+				498716651EE07F7600E78C27 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
