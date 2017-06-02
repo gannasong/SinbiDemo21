@@ -27,7 +27,6 @@ class Library {
             alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))
         return alert
     }
-    
     //測試網路
     //沒有網路時rawValue會是0
     static func checkInterNet() -> Bool {
@@ -38,9 +37,40 @@ class Library {
             return true
         }
     }
+}
+
+
+
+var isFBLogin = false
+var fbUsers: FBUsers?
+
+class FBUsers {
     
+    var name: String?
+    var email: String?
+    var pictureURL: URL?
     
-        
-    
+    init(name: String, email: String, pictureURL: URL) {
+        self.name = name
+        self.email = email
+        self.pictureURL = pictureURL
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -19,6 +19,9 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
+    //存放FB Google個資
+    var FBdata: [String:Any]?
+    var Googledata: [String:Any]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,13 +101,7 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
                     UserDefaults.standard.set(self.passwordTextField.text, forKey: "UserPass")
                     //同步強制存檔
                     UserDefaults.standard.synchronize()
-//                    self.present(Library.alert(title: "登入成功", message: "審美會員你好!!"), animated: true, completion: {
-//                       //寫轉場
-//                        self.performSegue(withIdentifier: "toMainVC", sender: self)
-//                        print("登入成功")
-//                        self.emailTextField.text = ""
-//                        self.passwordTextField.text = ""
-//                    })
+
                     
                     self.performSegue(withIdentifier: "toMainVC", sender: self)
                     SVProgressHUD.showSuccess(withStatus: "登入成功")
