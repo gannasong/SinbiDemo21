@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4946C0D81ED6A7B900ACED45 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946C0D71ED6A7B900ACED45 /* Auth.swift */; };
 		4946C0DA1ED6A8AD00ACED45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4946C0D91ED6A8AD00ACED45 /* GoogleService-Info.plist */; };
 		4981053C1EDADA0E005E4677 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4981053B1EDADA0E005E4677 /* MainViewController.swift */; };
 		498105401EDE5FDA005E4677 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4981053F1EDE5FDA005E4677 /* Reachability.m */; };
@@ -30,7 +29,6 @@
 /* Begin PBXFileReference section */
 		238FB0CEC5D9712572188C54 /* Pods_SinbiDemo21.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SinbiDemo21.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		272313F151FD11D0863F53ED /* Pods-SinbiDemo21.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SinbiDemo21.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SinbiDemo21/Pods-SinbiDemo21.debug.xcconfig"; sourceTree = "<group>"; };
-		4946C0D71ED6A7B900ACED45 /* Auth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		4946C0D91ED6A8AD00ACED45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4946C0DB1ED6D4FD00ACED45 /* SinbiDemo21-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SinbiDemo21-Bridging-Header.h"; sourceTree = "<group>"; };
 		4981053B1EDADA0E005E4677 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -133,7 +131,6 @@
 		49B050291ED53A02009EFBC9 /* SinbiDemo21 */ = {
 			isa = PBXGroup;
 			children = (
-				4946C0D71ED6A7B900ACED45 /* Auth.swift */,
 				49B0502A1ED53A02009EFBC9 /* AppDelegate.swift */,
 				49B0502E1ED53A02009EFBC9 /* Main.storyboard */,
 				49B050311ED53A02009EFBC9 /* Assets.xcassets */,
@@ -323,7 +320,6 @@
 				49B91E561ED566690046228B /* Model.swift in Sources */,
 				4981053C1EDADA0E005E4677 /* MainViewController.swift in Sources */,
 				498105441EDE77ED005E4677 /* MainCollectionViewCell.swift in Sources */,
-				4946C0D81ED6A7B900ACED45 /* Auth.swift in Sources */,
 				498105401EDE5FDA005E4677 /* Reachability.m in Sources */,
 				49AED0DE1ED82C67004C55BF /* SignUpTableViewController.swift in Sources */,
 				498716651EE07F7600E78C27 /* SWRevealViewController.m in Sources */,

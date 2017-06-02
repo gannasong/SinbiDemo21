@@ -60,9 +60,27 @@ class FBUsers {
 
 
 
+var isGoogleLogin = false
+var googleUsers: GoogleUsers?
+
+class GoogleUsers {
+    
+    var name: String?
+    var email: String?
+    var pictureURL: URL?
+    
+    init(name: String, email: String, pictureURL: URL) {
+        self.name = name
+        self.email = email
+        self.pictureURL = pictureURL
+    }
+
+}
 
 
-
+//如果是Firebase登入，就把資料存起來
+var sideNameInfo: String?
+var sideImageInfo: UIImage?
 
 
 

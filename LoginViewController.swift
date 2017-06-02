@@ -18,6 +18,10 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
     
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    //要在configure初始化完才能叫下面
+    lazy var ref = Database.database().reference()
+    lazy var uid = Auth.auth().currentUser!.uid
+    lazy var storage = Storage.storage().reference()
     
     //存放FB Google個資
     var FBdata: [String:Any]?
@@ -164,26 +168,64 @@ class LoginViewController: UIViewController,UITextFieldDelegate, GIDSignInUIDele
                     return
                 } else {
                     print("FB登入成功")
-                    
+                }
+                
+                //將fb資料存入firebase
+                if let data = self.FBdata {
+                    let FbID = self.ref.child("FBUser").child(self.uid)
+                    FbID.setValue(data)
                 }
             })
+            self.getFbUserInfo()
+            
             //轉場
             SVProgressHUD.showSuccess(withStatus: "登入成功")
             SVProgressHUD.dismiss(withDelay: 1.5)
             self.performSegue(withIdentifier: "toMainVC", sender: self)
         }
+    }
+    
+    //Fb獲取使用者資料
+    func getFbUserInfo() {
+        let parameters = ["fields":"email, first_name, last_name, picture.type(large)"]
+        FBSDKGraphRequest(graphPath: "me", parameters: parameters).start { (connection, result, error) in
+            if error != nil {
+                print(error!.localizedDescription)
+                SVProgressHUD.dismiss()
+            }
+         
+            if let results = result as? NSDictionary {
+                guard let email = results["email"] else { return }
+                print("email = \(email)")
+                
+                guard let firstName = results["first_name"] as? String, let lastName = results["last_name"] as? String else { return }
+                let name = firstName + " " + lastName
+                print("name = \(name)")
+                
+                guard let picture = results["picture"] as? NSDictionary,
+                       let data = picture["data"] as? NSDictionary,
+                    let url = data["url"] as? String else { return }
+                print("URL = \(url)")
+                
+                //把FB資料存在Firebase裡
+                self.FBdata = ["email":email, "password":"xxxxxx", "name":name, "avatar":url]
+            }
+        }
+        
         
     }
     
+    
+    
     //Google登入
     @IBAction func GoogleLoginButton(_ sender: UIButton) {
-        SVProgressHUD.show(withStatus: "登入中")
+       
         //網路測試
         if Library.checkInterNet() == false {
             present(Library.alert(message: "網路狀況異常"), animated: true, completion: nil)
             SVProgressHUD.dismiss()
         }
-        
+        SVProgressHUD.show(withStatus: "登入中")
         GIDSignIn.sharedInstance().signIn()
     }
     
